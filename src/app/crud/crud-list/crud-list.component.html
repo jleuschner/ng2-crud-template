@@ -1,0 +1,10 @@
+<p>
+  crud-list works!
+</p>
+
+<ul>
+  <li *ngFor="let crud of cruds" (click)="select(crud)">
+    {{crud.name}}
+  </li>
+</ul>
+selectedID: {{selectedID}}
