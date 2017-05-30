@@ -20,11 +20,11 @@ export class CrudDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-/*
+    console.log("PARAM:" + this.route.snapshot.params['id'])
+/*    
     this.route.params
-      .switchMap( (params: Params) => console.log(params['id']) ;
+      .switchMap( (params: Params) => { console.log("Param: "+params['id']); return params['id'] || 0;} )
+      .subscribe( (id:number) => console.log(id));
 */
-
   }
 }
