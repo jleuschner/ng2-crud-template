@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Crud } from './crud.model';
@@ -7,6 +7,7 @@ import { Crud } from './crud.model';
 @Injectable()
 export class CrudService {
 
+  private headers = new Headers({ 'Content-Type': 'application/json' });
   private crudUrl = 'http://balin2.kl.kdo.int:3000/api/tests';
 
   constructor(private http: Http) { }
@@ -19,12 +20,20 @@ export class CrudService {
   }
 
   getCrud(id: number): Promise<Crud> {
-    return this.http.get(this.crudUrl+'/'+id)
+    return this.http.get(this.crudUrl + '/' + id)
       .toPromise()
-      .then( response => response.json() as Crud)
+      .then(response => response.json() as Crud)
       .catch(this.handleError);
   }
 
+  update(crud: Crud): Promise<Crud> {
+    const url = `${this.crudUrl}/${crud.id}`;
+    return this.http
+      .put(url, JSON.stringify(crud), { headers: this.headers })
+      .toPromise()
+      .then(() => crud)
+      .catch(this.handleError);
+  }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only

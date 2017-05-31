@@ -2,6 +2,10 @@
   crud-detail works!
 </p>
 <div *ngIf="crud">
+  <label>ID: </label>
+  <input [(ngModel)]="crud.id" Placeholder="ID">
+  <br>
   <label>Name: </label>
   <input [(ngModel)]="crud.name" Placeholder="name">
+  <button (click)="update()">Update</button>
 </div>

@@ -4,6 +4,7 @@ import { Location } from "@angular/common";
 import 'rxjs/add/operator/switchMap';
 
 import { Crud } from '../shared/crud.model';
+import { CrudService } from "../shared/crud.service";
 
 @Component({
   selector: 'app-crud-detail',
@@ -16,15 +17,19 @@ export class CrudDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private crudService: CrudService
   ) { }
 
   ngOnInit() {
     console.log("PARAM:" + this.route.snapshot.params['id'])
-/*    
     this.route.params
-      .switchMap( (params: Params) => { console.log("Param: "+params['id']); return params['id'] || 0;} )
-      .subscribe( (id:number) => console.log(id));
-*/
+      .switchMap( (params: Params) => this.crudService.getCrud(+params['id']) )
+      .subscribe( crud => { this.crud = crud; console.log('SUBSC: ' + crud); } );
+  }
+
+  update(): void {
+    this.crudService.update(this.crud)
+      .then( () => console.log("Updated") );
   }
 }
