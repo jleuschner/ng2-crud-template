@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { ChildroutingModule } from "./childrouting/childrouting.module";
 import { AppRoutingModule  } from "./app-routing.module";
 
 
@@ -13,6 +14,8 @@ import { CrudDetailComponent } from './crud/crud-detail/crud-detail.component';
 import { CrudService } from "./crud/shared/crud.service";
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+
+
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    ChildroutingModule,
     AppRoutingModule
   ],
   providers: [CrudService],
