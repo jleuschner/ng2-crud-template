@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 
 import { ChildroutingComponent } from "./childrouting.component";
 import { ChildroutingHomeComponent } from "./childrouting-home.component";
+import { ChildroutingDetailComponent } from "./childrouting-detail.component";
 
 import { ChildroutingRoutingModule } from "./childrouting-routing.module";
 
@@ -13,7 +14,8 @@ import { ChildroutingRoutingModule } from "./childrouting-routing.module";
     ],
     declarations: [
         ChildroutingComponent,
-        ChildroutingHomeComponent
+        ChildroutingHomeComponent,
+        ChildroutingDetailComponent
     ]
 })
 export class ChildroutingModule {}
