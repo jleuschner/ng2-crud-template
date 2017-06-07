@@ -11,13 +11,15 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'detail/:id', component: CrudDetailComponent },
     { path: 'cruds', component: CrudComponent },
-    /*
+
+    // Lazy Loading - Block
     { 
         path: 'childrouting',
         loadChildren: 'app/childrouting/childrouting.module#ChildroutingModule',
         data: { preload: true} 
     },
-    */
+    // Lazy Loading - Block
+    
     { path: '**', redirectTo: '/dashboard' },
 ];
 @NgModule({

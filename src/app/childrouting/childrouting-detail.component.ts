@@ -3,21 +3,24 @@ import { Router, ActivatedRoute, Params } from "@angular/router";
 
 @Component({
   template: `
-    <p>Childrouting-Detail</p>
+    <h2>Childrouting-Detail</h2>
+    <h3>ID: {{id}}</h3>
   `
 })
 export class ChildroutingDetailComponent implements OnInit { 
 
   constructor ( 
-    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private router: Router) {}
+    private id: number;
 
   ngOnInit() {
-    console.log("ngOnIntit: "+ this.route.snapshot.params['id']);
-    this.route.params
-      .switchMap( (params: Params) => { console.log("SwitchMap: "+params['id']); return params['id']; } )
-      .subscribe( (id) => console.log("Subscribe: "+id) );
-    
+    this.activatedRoute.params
+      .switchMap( (params: Params) => { console.log("DETAIL-SwitchMap: "+params['id']); return params['id']; } )
+      .subscribe( (id) => { 
+        console.log("DETAIL-Subscribe: "+id);
+        this.id = +id;
+      });
   }
 
 }

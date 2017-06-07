@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { ChildroutingModule } from "./childrouting/childrouting.module";
+//import { ChildroutingModule } from "./childrouting/childrouting.module";  // entfällt bei Lazy Loading
 import { AppRoutingModule  } from "./app-routing.module";
 
 
@@ -29,7 +29,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ChildroutingModule,
+    // ChildroutingModule,   // entfällt bei Lazy Loading
     AppRoutingModule
   ],
   providers: [CrudService],

@@ -7,7 +7,8 @@ import { ChildroutingDetailComponent } from "./childrouting-detail.component";
 
 const childroutingRoutes: Routes = [
     {
-        path: 'childrouting',
+        //path: 'childrouting',
+        path: '',   // Lazy loading
         component: ChildroutingComponent,
         children: [
             {
