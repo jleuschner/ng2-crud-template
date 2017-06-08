@@ -19,7 +19,14 @@ const routes: Routes = [
         data: { preload: true} 
     },
     // Lazy Loading - Block
-    
+
+    { 
+        path: 'admin',
+        loadChildren: 'app/admin/admin.module#AdminModule',
+        data: { preload: true} 
+    },
+
+
     { path: '**', redirectTo: '/dashboard' },
 ];
 @NgModule({
