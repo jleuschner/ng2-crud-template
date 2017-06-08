@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   template: `
-    <h3>Childrouting-Home</h3>
+    <h3>Page2-Home</h3>
     <p>Wenn keine ID als URL-Parameter angegeben ist...</p>
   `
 })
-export class ChildroutingHomeComponent { }
+export class Page2HomeComponent { }

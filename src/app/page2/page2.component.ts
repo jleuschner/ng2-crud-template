@@ -2,24 +2,17 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, Params, NavigationEnd, Event } from "@angular/router";
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
-// import { Observable } from "rxjs/Observable";
-
 import { Subscription } from "rxjs/Subscription";
 
 
 @Component({
     template: `
-    <h1>Childrouting-Template - Shell</h1>
-    <p>:id des Child-Components am Ende des URL wird als Subscription mitgehört und 'selectedID' zugewiesen:
-    <br><a routerLink="1" routerLinkActive="aktiv">Childrouting/1</a>
-    <br><a routerLink="./2" routerLinkActive="aktiv">Childrouting/2</a>
-
+    <h1>Page2 - Routing mit CanDeactivate-Guard</h1>
     <h3>SelectedID: {{selectedID}}</h3>
     
     <div class="outlet">
     <router-outlet></router-outlet>
     </div>
-    
   `,
   styles: [`
     .outlet {
@@ -27,7 +20,7 @@ import { Subscription } from "rxjs/Subscription";
     }
   `]
 })
-export class ChildroutingComponent implements OnInit, OnDestroy {
+export class Page2Component implements OnInit, OnDestroy {
     private selectedID;
 
     constructor(

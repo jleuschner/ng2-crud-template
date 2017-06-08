@@ -2,14 +2,16 @@
   {{title}}
 </h1>
 <nav>
-<a routerLink="dashboard" routerLinkActive="aktiv">Dashboard</a>
-<a routerLink="cruds" routerLinkActive="aktiv">CRUDs</a>
-<a routerLink="detail/1" routerLinkActive="aktiv">CRUD1</a>
+  <a routerLink="dashboard" routerLinkActive="aktiv">Dashboard</a>
+  <a routerLink="cruds" routerLinkActive="aktiv">CRUDs</a>
+  <a routerLink="detail/1" routerLinkActive="aktiv">CRUD1</a>
+  <a routerLink="childrouting" routerLinkActive="aktiv">Childrouting</a>
 
-<a routerLink="childrouting" routerLinkActive="aktiv" [routerLinkActiveOptions]="{exact: true}">Childrouting</a>
-<a routerLink="childrouting/1" routerLinkActive="aktiv">Childrouting1</a>
-<a routerLink="childrouting/2" routerLinkActive="aktiv">Childrouting2</a>
+  <a routerLink="page2" routerLinkActive="aktiv" [routerLinkActiveOptions]="{exact: true}">Page2</a>
+  <a routerLink="page2/1" routerLinkActive="aktiv">Page2/1</a>
+  <a routerLink="page2/2" routerLinkActive="aktiv">Page2/2</a>
 </nav>
-<hr>
 
-<router-outlet></router-outlet>
+<div class="outlet">
+  <router-outlet></router-outlet>
+</div>

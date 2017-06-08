@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 //import { ChildroutingModule } from "./childrouting/childrouting.module";  // entfällt bei Lazy Loading
+import { Page2Module } from "./page2/page2.module";
+
 import { AppRoutingModule  } from "./app-routing.module";
 
 
@@ -30,6 +32,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     HttpModule,
     // ChildroutingModule,   // entfällt bei Lazy Loading
+    Page2Module,
     AppRoutingModule
   ],
   providers: [CrudService],
