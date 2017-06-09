@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   template:  `
-    <h3>ADMIN</h3>
+    <h3>ADMIN-Route mit CanActivate-Guard</h3>
     <nav>
       <a routerLink="./" routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>

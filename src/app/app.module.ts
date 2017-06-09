@@ -17,23 +17,25 @@ import { CrudService } from "./crud/shared/crud.service";
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-
+import { LoginComponent,LoginRoutingModule } from "./login";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CrudComponent,
-    CrudListComponent,
-    CrudDetailComponent,
-    DashboardComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     // ChildroutingModule,   // entfällt bei Lazy Loading
     Page2Module,
+    LoginRoutingModule,
     AppRoutingModule
+  ],
+  declarations: [
+    AppComponent,
+    CrudComponent,
+    CrudListComponent,
+    CrudDetailComponent,
+    DashboardComponent,
+    LoginComponent
   ],
   providers: [CrudService],
   bootstrap: [AppComponent]
