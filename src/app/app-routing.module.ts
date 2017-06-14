@@ -23,7 +23,7 @@ const routes: Routes = [
     { 
         path: 'admin',
         loadChildren: 'app/admin/admin.module#AdminModule',
-        data: { preload: true} 
+        //data: { preload: true} 
     },
 
 
